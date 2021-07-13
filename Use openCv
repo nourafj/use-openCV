@@ -1,0 +1,59 @@
+ls
+Test.pay test.pay~
+cd resources 
+ls
+imview face1.jpg
+imview face2.jpg
+imview face3.jpg
+imview face4.jpg
+imview face5.jpg
+cd . . / 
+ls  
+a.py a.py~ 
+python3 a.py
+Test.pay test.pay~
+python3 a.py
+emcs a.py
+python3 a.py
+emcs a.py 
+ls
+a.py a.py~ 
+Test.pay test.pay~
+sudo apt install python3-opencv 
+ls
+Test.pay test.pay~
+emcs a.py
+emcs a.py
+python3 a.py
+emcs a.py 
+———————————————————
+import cv2
+
+
+face cascade=cv2.cascadeclassifier(‘opencv-master/data/haarcascades/haarcascade_frontalface_default.xml’)
+eye cascade=cv2.cascadeclassifier(‘opencv-master/data/haarcascades/haarcascade_eye.xml’)
+img=cv2.imread(‘resources/face2.jpg’)
+gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+scaleFactor=1.05
+Minneighbours=6
+faces=face_cascade.detecMultiScale(gray,scaleFactor, Minneighbours)
+
+for(x,y,w,h) in faces:
+
+roi_gray=gray[y:y+h,x:x+w]
+img=cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+roi_img=img[y:y+h,x:x+w]
+eyes=eye_cascade.detectMultiScale(roi_gray)
+for(ex,ey,ew,eh)in eyes:
+img=cv2.rectangle(roi_img,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+cv2.imshow(‘img’,img)
+cv2.waitKey(0)cv2.destroyAllWindows()
+
+——————————————————
+python3 a.py
+emcs a.py 
+emcs a.py 
+python3 a.py
+emcs a.py 
+python3 a.py
+python3 a.py
